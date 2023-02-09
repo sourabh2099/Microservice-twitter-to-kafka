@@ -1,0 +1,11 @@
+twitter-to-kafka-service:
+  twitter-keywords:
+    -Java
+    -Microservice
+    -Spring
+    -Kafka
+    -ElasticSearch
+  enable-mock-kafka-stream-Runner: true
+  mock-min-tweet-length: 5
+  mock-max-tweet-length: 15
+  mock-sleep-ms: 10000
