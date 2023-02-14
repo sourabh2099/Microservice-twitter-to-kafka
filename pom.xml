@@ -28,6 +28,7 @@
         <spring-retry.version>2.0.0</spring-retry.version>
         <springBootStarter-aop.version>3.0.2</springBootStarter-aop.version>
         <apache-avro.version>1.11.0</apache-avro.version>
+        <spring-boot-webFlux.version>3.0.2</spring-boot-webFlux.version>
     </properties>
     <packaging>pom</packaging>
 
@@ -76,6 +77,12 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <version>${spring-boot-webFlux.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
             <dependency>
