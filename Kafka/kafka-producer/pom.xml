@@ -10,7 +10,26 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kafka-producer</artifactId>
-
+    <dependencies>
+        <!--LOCAL DEPENDENCIES-->
+        <dependency>
+            <groupId>com.example.microservice</groupId>
+            <artifactId>app-data-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.example.microservice</groupId>
+            <artifactId>kafka-model</artifactId>
+        </dependency>
+        <!--GLOBAL DEPENDENCIES-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

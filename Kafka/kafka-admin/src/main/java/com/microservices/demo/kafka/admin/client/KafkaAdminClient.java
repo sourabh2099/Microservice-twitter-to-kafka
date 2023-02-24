@@ -9,7 +9,6 @@ import org.apache.kafka.clients.admin.CreateTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.admin.TopicListing;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.retry.RetryContext;
 import org.springframework.retry.support.RetryTemplate;
@@ -47,7 +46,7 @@ public class KafkaAdminClient {
         int maxRetry = retryConfigData.getMaxAttempts();
         int multi = retryConfigData.getMultiplier().intValue();
         Long sleep = retryConfigData.getSleepTimeMs();
-        while (checkSchemaRegistry().is2xxSuccessful()) {
+        while (!checkSchemaRegistry().is2xxSuccessful()) {
             checkMaxRetry(retryCount++, maxRetry);
             sleepTime(sleep);
             sleep = sleep * multi;

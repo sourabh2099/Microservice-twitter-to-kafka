@@ -29,6 +29,8 @@
         <springBootStarter-aop.version>3.0.2</springBootStarter-aop.version>
         <apache-avro.version>1.11.0</apache-avro.version>
         <spring-boot-webFlux.version>3.0.2</spring-boot-webFlux.version>
+        <spring-kafka.version>3.0.2</spring-kafka.version>
+        <kafka-avro-serializer.version>5.3.0</kafka-avro-serializer.version>
     </properties>
     <packaging>pom</packaging>
 
@@ -48,6 +50,11 @@
             <dependency>
                 <groupId>com.microservice.demo</groupId>
                 <artifactId>Kafka</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.microservice</groupId>
+                <artifactId>kafka-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -102,6 +109,18 @@
                 <artifactId>spring-boot-starter-aop</artifactId>
                 <version>${springBootStarter-aop.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer -->
+            <dependency>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-avro-serializer</artifactId>
+                <version>${kafka-avro-serializer.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
@@ -110,7 +129,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <repositories>
+            <repository>
+                <id>confluent</id>
+                <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+            </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>
