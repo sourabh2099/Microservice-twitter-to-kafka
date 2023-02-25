@@ -16,4 +16,13 @@ retry-config-data:
   multiplier: 2.0
   max-attempts: 3
   sleep-time-ms: 2000
-
+kafka-producer-config:
+  key-serializer-class: org.apache.kafka.common.serialization.LongSerializer
+  value-serializer-class: io.confluent.kafka.serializers.KafkaAvroSerializer
+  compression-type: snappy
+  acks: all
+  batch-size: 16384 #16 kilobytes
+  batch-size-boost-factor: 100
+  linger-ms: 5
+  request-timeout-ms: 60000
+  retry-count: 5

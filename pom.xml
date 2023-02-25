@@ -47,14 +47,26 @@
                 <artifactId>common-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!-- KAFKA POM DEPENDENCY -->
             <dependency>
                 <groupId>com.microservice.demo</groupId>
                 <artifactId>Kafka</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!--Kafka Local Dependencies-->
             <dependency>
                 <groupId>com.example.microservice</groupId>
                 <artifactId>kafka-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.microservice</groupId>
+                <artifactId>kafka-admin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.microservice</groupId>
+                <artifactId>kafka-producer</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -130,10 +142,10 @@
         </dependencies>
     </dependencyManagement>
     <repositories>
-            <repository>
-                <id>confluent</id>
-                <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
-            </repository>
+        <repository>
+            <id>confluent</id>
+            <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+        </repository>
     </repositories>
     <build>
         <plugins>
